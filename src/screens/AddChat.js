@@ -11,7 +11,7 @@ const AddChat = ({ navigation }) => {
     const [text, setText] = useState('');
     const dispatch = useDispatch()
     const chatData = useSelector(state => state.chats)
-
+  /*   Authorization:token 6ebfff6d-fa4c-4e33-8f17-d4c9aa0cb71f */
     useEffect(() => {
     }, [])
 
