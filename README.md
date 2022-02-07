@@ -2,7 +2,7 @@
 
 Please make sure the api is running <br/>
 https://jsonbin.org/me <br/>
-Authorization:token 6ebfff6d-fa4c-4e33-8f17-d4c9aa0cb71f
+<!-- Authorization:token 6ebfff6d-fa4c-4e33-8f17-d4c9aa0cb71f -->
 
 
 Procedure to run this App:
