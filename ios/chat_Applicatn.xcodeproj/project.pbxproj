@@ -28,6 +28,8 @@
 		132AE3C7AD594979AF4DE389 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CA14DA28F24285BC02B5E1 /* Octicons.ttf */; };
 		9F497A756FF6496B8D1F6540 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CC9E8129C4C4D5A8232C06B /* SimpleLineIcons.ttf */; };
 		4CB856A0B0C54EB1BAD8F4F6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26CF23BC44B4B58A5EF0884 /* Zocial.ttf */; };
+		03D35D764BF54048908B7D6F /* Festive-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF83A9FEFC2437D88F86CD4 /* Festive-Regular.ttf */; };
+		4FF03A1A4FE84D7A96A32FBA /* SyneTactile-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECA9D637C444EEEB657208E /* SyneTactile-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		A7CA14DA28F24285BC02B5E1 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7CC9E8129C4C4D5A8232C06B /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D26CF23BC44B4B58A5EF0884 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6BF83A9FEFC2437D88F86CD4 /* Festive-Regular.ttf */ = {isa = PBXFileReference; name = "Festive-Regular.ttf"; path = "../assets/fonts/Festive-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9ECA9D637C444EEEB657208E /* SyneTactile-Regular.ttf */ = {isa = PBXFileReference; name = "SyneTactile-Regular.ttf"; path = "../assets/fonts/SyneTactile-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 				A7CA14DA28F24285BC02B5E1 /* Octicons.ttf */,
 				7CC9E8129C4C4D5A8232C06B /* SimpleLineIcons.ttf */,
 				D26CF23BC44B4B58A5EF0884 /* Zocial.ttf */,
+				6BF83A9FEFC2437D88F86CD4 /* Festive-Regular.ttf */,
+				9ECA9D637C444EEEB657208E /* SyneTactile-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 				132AE3C7AD594979AF4DE389 /* Octicons.ttf in Resources */,
 				9F497A756FF6496B8D1F6540 /* SimpleLineIcons.ttf in Resources */,
 				4CB856A0B0C54EB1BAD8F4F6 /* Zocial.ttf in Resources */,
+				03D35D764BF54048908B7D6F /* Festive-Regular.ttf in Resources */,
+				4FF03A1A4FE84D7A96A32FBA /* SyneTactile-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

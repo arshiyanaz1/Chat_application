@@ -13,7 +13,7 @@ const store = createStore(chatItems, applyMiddleware(thunk))
 const App = () => {
   return (
     <Provider store={store}>
-      <DrawerNavigator></DrawerNavigator>
+        <DrawerNavigator></DrawerNavigator>
     </Provider>
   );
 };

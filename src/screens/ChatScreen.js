@@ -1,69 +1,73 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, StyleSheet, Animated, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, StatusBar, Animated, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Container, Card, UserInfo, UserImgWrapper, UserImg, UserInfoText, UserName, PostTime, MessageText, TextSection, } from '../assets/styles/MessageStyle';
 import Feather from 'react-native-vector-icons/Feather';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChats } from "../Redux/actions/cardAction.js";
+import { useTheme } from 'react-native-paper';
 
 const baseUrl = 'https://jsonbin.org/me/chats';
 const ChatScreen = ({ navigation, route }) => {
     const dispatch = useDispatch()
     const chatData = useSelector(state => state.chats)
-
+    const { colors } = useTheme();
+    const theme=useTheme();
 
     useEffect(() => {
         dispatch(getChats());
-    }, [dispatch,chatData])
+    }, [dispatch, chatData])
 
     return (
+        <>
+            <StatusBar barStyle={theme.dark?'light-content':'dark-content'}/>
+            <LinearGradient
+                colors={['#1C2E46', '#32445A', '#2F3E53']}
+                style={styles.gradient}
+            >
+                <View style={styles.headerContainer}>
+                    <Feather name='menu' size={25} color='#fff' onPress={() => navigation.openDrawer()} />
+                    <Text style={styles.header} >CHATS</Text>
+                </View>
 
-        <LinearGradient
-            colors={['#1C2E46', '#32445A', '#2F3E53']}
-            style={styles.gradient}
-        >
-            <View style={styles.headerContainer}>
-                <Feather name='menu' size={25} color='#fff' onPress={() => navigation.openDrawer()} />
-                <Text style={styles.header} >CHATS</Text>
-            </View>
+                <View style={styles.ops}>
 
-            <View style={styles.ops}>
+                    <Container style={{ marginTop: 30 }}>
+                        <FlatList
+                            data={chatData}
+                            keyExtractor={item => item.messageTime}
+                            renderItem={({ item }) => (
+                                <Card onPress={() => navigation.navigate('Message', { userName: item.userName })}>
+                                    <UserInfo>
+                                        <UserImgWrapper>
+                                            <UserImg source={require('../assets/users/user-2.jpg')} />
+                                        </UserImgWrapper>
+                                        <TextSection>
+                                            <UserInfoText>
+                                                <UserName>{item.userName}</UserName>
+                                                <PostTime>{item.messageTime}</PostTime>
+                                            </UserInfoText>
+                                            <MessageText>{item.messageText}</MessageText>
+                                        </TextSection>
+                                    </UserInfo>
+                                </Card>
+                            )}
+                        />
 
-                <Container style={{ marginTop: 30 }}>
-                    <FlatList
-                        data={chatData}
-                        keyExtractor={item => item.messageTime}
-                        renderItem={({ item }) => (
-                            <Card onPress={() => navigation.navigate('Message', { userName: item.userName })}>
-                                <UserInfo>
-                                    <UserImgWrapper>
-                                        <UserImg source={require('../assets/users/user-2.jpg')} />
-                                    </UserImgWrapper>
-                                    <TextSection>
-                                        <UserInfoText>
-                                            <UserName>{item.userName}</UserName>
-                                            <PostTime>{item.messageTime}</PostTime>
-                                        </UserInfoText>
-                                        <MessageText>{item.messageText}</MessageText>
-                                    </TextSection>
-                                </UserInfo>
-                            </Card>
-                        )}
-                    />
+                        <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', display: 'flex' }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('AddChat')} style={{
+                                alignItems: 'center', backgroundColor: '#32445A', borderRadius: 50, padding: 10, width: 50, marginBottom: 80, marginRight: 20, justifyContent: 'flex-end'
+                            }}>
+                                <Feather name='plus' size={25} color='#fff' />
+                            </TouchableOpacity>
+                        </View>
 
-                    <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', display: 'flex' }}>
-                        <TouchableOpacity onPress={() => navigation.navigate('AddChat')} style={{
-                            alignItems: 'center', backgroundColor: '#32445A', borderRadius: 50, padding: 10, width: 50, marginBottom: 80, marginRight: 20, justifyContent: 'flex-end'
-                        }}>
-                            <Feather name='plus' size={25} color='#fff' />
-                        </TouchableOpacity>
-                    </View>
-
-                </Container>
-            </View>
+                    </Container>
+                </View>
 
 
-        </LinearGradient>
+            </LinearGradient>
+        </>
     )
 }
 export default ChatScreen;
@@ -98,7 +102,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15
     },
     header: {
-        fontFamily: 'Montserrat_800ExtraBold',
+        fontFamily: 'Festive-Regular',
         color: '#FFF',
         flex: 1,
         fontSize: 20,
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         height: '100%',
-        backgroundColor: '#FFF',
+        backgroundColor: '#fff',
         marginHorizontal: -20,
         position: 'relative'
     },

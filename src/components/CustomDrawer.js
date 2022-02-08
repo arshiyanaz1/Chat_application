@@ -1,31 +1,38 @@
 import React, { useContext } from 'react'
-import { View, Text, TouchableOpacity,StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AuthContext } from './context';
 import {
     useTheme, TouchableRipple,
-    Switch
+    Switch, Drawer
 } from 'react-native-paper';
+
+
+
+
 const CustomDrawer = (props) => {
-    const { signOut,toggleTheme } = useContext(AuthContext);    
+    const { signOut, toggleTheme } = useContext(AuthContext);
     const paperTheme = useTheme();
+    const {colors}=useTheme();
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }} >
             <DrawerContentScrollView {...props}>
 
-                <View style={{ flex: 1, backgroundColor: '#fff', paddingTop: 10 }}>
+                <View style={{ flex: 1,/*  backgroundColor: '#fff', */ paddingTop: 10 }}>
                     <DrawerItemList {...props} />
                 </View>
             </DrawerContentScrollView>
+            <Drawer.Section title="Preferences">
                 <TouchableRipple onPress={() => { toggleTheme() }}>
                     <View style={styles.preference}>
-                        <Text>Dark Theme</Text>
+                        <Text style={{color:colors.text}}>Dark Theme</Text>
                         <View pointerEvents="none">
                             <Switch value={paperTheme.dark} />
                         </View>
                     </View>
                 </TouchableRipple>
+            </Drawer.Section>
             <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
                 <TouchableOpacity onPress={() => { }} style={{ paddingVertical: 15 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -33,7 +40,7 @@ const CustomDrawer = (props) => {
                         <Text
                             style={{
                                 fontSize: 15,
-                                fontFamily: 'Roboto-Medium',
+                                fontFamily: 'SyneTactile-Regular',
                                 marginLeft: 5, color: '#333'
                             }}>
                             Tell a Friend

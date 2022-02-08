@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet ,Image} from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-import {useTheme} from 'react-native-paper';
+import { useTheme } from 'react-native-paper';
 
-const mapDarkStyle=[
+const mapDarkStyle = [
   {
     "elementType": "geometry",
     "stylers": [
@@ -216,7 +216,7 @@ const mapDarkStyle=[
   }
 ];
 
-const mapStandardStyle=[  {
+const mapStandardStyle = [{
   "elementType": "labels.icon",
   "stylers": [
     {
@@ -226,11 +226,11 @@ const mapStandardStyle=[  {
 },];
 
 const MapScreen = () => {
-  const theme=useTheme();
+  const theme = useTheme();
   return (
     <MapView
       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-      customMapStyle={mapDarkStyle}/* { theme.dark ? mapDarkStyle : mapStandardStyle} */
+      customMapStyle={theme.dark ? mapDarkStyle : mapStandardStyle}
       style={styles.map}
       region={{
         latitude: 37.78825,
@@ -251,13 +251,13 @@ const MapScreen = () => {
           <View>
             <View style={styles.bubble}>
               <Text style={styles.name}>Fav</Text>
-              <Text>Short description</Text>
+              {/* <Text>Short description</Text> */}
               <Image 
               style={styles.image}
-              source={require('../assets/images/menu-bg.jpeg')}/>
+              source={require('../assets/users/user-5.jpg')}/>
             </View>
-            <View style={styles.arrowBorder}/>
-            <View style={styles.arrow}/>
+            <View style={styles.arrowBorder} />
+            <View style={styles.arrow} />
           </View>
         </Callout>
       </Marker>
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
   },
   // Character image
   image: {
-    width: 80,
+    width: '80%',
     height: 80,
   },
 });
