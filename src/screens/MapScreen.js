@@ -1,8 +1,10 @@
-import { View, Text, StyleSheet,/*  Image  */ } from 'react-native';
+import { View, Text, StyleSheet, Image  } from 'react-native';
 import React from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { useTheme } from 'react-native-paper';
-import { Svg, Image as ImageSvg } from 'react-native-svg';
+
+
+
 const mapDarkStyle = [
   {
     "elementType": "geometry",

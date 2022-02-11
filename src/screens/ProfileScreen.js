@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Animated, Image, TouchableOpacity } from 'react
 import Feather from 'react-native-vector-icons/Feather';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfile } from "../Redux/actions/cardAction.js";
+import config from '../../config'
 
 const ProfileScreen = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -16,8 +17,9 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.containerImage}>
             <Image style={styles.bgImage} source={require('../assets/users/user-5.jpg')} />
             <View style={styles.bottomContainer}>
-
+                
                 <Image style={styles.profile} source={require('../assets/users/user-5.jpg')} />
+               {/*  <Text style={{color:'black'}}>{config.MAP_KEY}</Text> */}
                 <TouchableOpacity onPress={() => navigation.navigate('EditProfile', { profileData: profileData })} style={{ bottom: '9%', right: '2%' }}>
                     <Feather
 
