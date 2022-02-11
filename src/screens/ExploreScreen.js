@@ -22,6 +22,13 @@ import StarRating from '../components/StarRating';
 
 import { useTheme } from '@react-navigation/native';
 
+
+/* 
+for search
+https://github.com/FaridSafi/react-native-google-places-autocomplete
+https://www.youtube.com/watch?v=qlELLikT3FU
+*/
+
 const { width, height } = Dimensions.get("window");
 const CARD_HEIGHT = 220;
 const CARD_WIDTH = width * 0.8;
