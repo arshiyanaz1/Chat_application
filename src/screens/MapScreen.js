@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet,/*  Image  */ } from 'react-native';
 import React from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { useTheme } from 'react-native-paper';
-
+import { Svg, Image as ImageSvg } from 'react-native-svg';
 const mapDarkStyle = [
   {
     "elementType": "geometry",
@@ -233,16 +233,17 @@ const MapScreen = () => {
       customMapStyle={theme.dark ? mapDarkStyle : mapStandardStyle}
       style={styles.map}
       region={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.015,
-        longitudeDelta: 0.0121,
+        latitude: 25.2697,
+        longitude: 55.3095,
+        latitudeDelta: 1.015,
+        longitudeDelta: 1.0121,
       }}
     >
-      <Marker coordinate={{
-        latitude: 37.78825,
-        longitude: -122.4324
-      }}
+      <Marker
+        coordinate={{
+          latitude: 25.2697,
+          longitude: 55.3095
+        }}
         image={require('../assets/images/map_marker.png')}
         title="test tilte"
         description='this is the test description'
@@ -251,10 +252,9 @@ const MapScreen = () => {
           <View>
             <View style={styles.bubble}>
               <Text style={styles.name}>Fav</Text>
-              {/* <Text>Short description</Text> */}
-              <Image 
-              style={styles.image}
-              source={require('../assets/users/user-5.jpg')}/>
+               <Image
+                style={styles.image}
+                source={require('../assets/users/user-5.jpg')} />
             </View>
             <View style={styles.arrowBorder} />
             <View style={styles.arrow} />

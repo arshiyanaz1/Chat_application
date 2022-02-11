@@ -98,7 +98,8 @@ const DrawerNavigator = () => {
                             drawerInactiveTintColor: '#333',
                             drawerLabelStyle: { marginLeft: -25, fontSize: 15 }
                         }}>
-                            <Drawer.Screen name="Home" component={MainTabScreen} options={{
+                            <Drawer.Screen name="HomeDrawer"  component={MainTabScreen} options={{
+                                drawerLabel:'Home',
                                 drawerIcon: ({ color }) => (
                                     <Ionicons name="home-outline" size={22} color={color} />
                                 )

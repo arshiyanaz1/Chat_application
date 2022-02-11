@@ -1,7 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import ProfileScreen from '../screens/ProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import ChatScreen from '../screens/ChatScreen';
@@ -9,6 +12,7 @@ import AddChat from '../screens/AddChat'
 import MessageScreen from '../screens/MessageScreen';
 import EditProfile from '../screens/EditProfile';
 import MapScreen from "../screens/MapScreen";
+import ExploreScreen from "../screens/ExploreScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 const MainTabScreen = () => (
@@ -40,13 +44,24 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name="Map"
+      name="MapTab"
       component={MapStackScreen}
       options={{
         tabBarLabel: 'Map',
         tabBarColor: '#1C2E46',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="map" color={color} size={26} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Explore"
+      component={ExploreScreen}
+      options={{
+        tabBarLabel: 'Explore',
+        tabBarColor: '#1C2E46',
+        tabBarIcon: ({color}) => (
+          <Icon name="ios-aperture" color={color} size={26} />
         ),
       }}
     />
@@ -103,9 +118,28 @@ const MapStackScreen = ({ navigation }) => {
         headerTitleAlign: 'center',
         headerBackTitleVisible: false
       })} />
-      
+
     </MapStack.Navigator>
   );
 }
+
+/* const ExploreStack = createNativeStackNavigator();
+
+const ExploreStackScreen = ({ navigation }) => {
+  return (
+    <ExploreStack.Navigator screenOptions={{ headerShown: false }} >
+      <ExploreStack.Screen name="Explore" component={ExploreScreen} options={() => ({
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: '#1C2E46',
+        },
+        headerTintColor: '#fff',
+        headerTitleAlign: 'center',
+        headerBackTitleVisible: false
+      })} />
+
+    </ExploreStack.Navigator>
+  );
+} */
 
 
